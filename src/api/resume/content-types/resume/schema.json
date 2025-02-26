@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "resumes",
+  "info": {
+    "singularName": "resume",
+    "pluralName": "resumes",
+    "displayName": "resume",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "adas": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "json"
+    },
+    "stock": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "pc": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "number": {
+      "type": "integer"
+    }
+  }
+}

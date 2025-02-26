@@ -383,8 +383,7 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
   attributes: {
     aboutpara: Schema.Attribute.Text &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.DefaultTo<'I\u2019m a Frontend Developer with experience in frontend development, web design, and WordPress. I\u2019ve helped businesses build modern web experiences with technologies like React, Next.js, and Shopify.'>;
+      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -393,16 +392,14 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
       Schema.Attribute.DefaultTo<true>;
     headerTaglineOne: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.DefaultTo<'Hello \uD83D\uDC4B'>;
+      Schema.Attribute.Unique;
     headerTaglineThree: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.DefaultTo<'Web Designer and Developer'>;
     headerTaglineTwo: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.DefaultTo<"I'm James Guevara">;
+      Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -411,8 +408,7 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.DefaultTo<'James Portfolio'>;
+      Schema.Attribute.Unique;
     projects: Schema.Attribute.Component<'project.projects', true>;
     publishedAt: Schema.Attribute.DateTime;
     resume: Schema.Attribute.Component<'resume.resume', false> &
@@ -426,6 +422,41 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
     socials: Schema.Attribute.Component<'social.social', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResumeResume extends Struct.SingleTypeSchema {
+  collectionName: 'resumes';
+  info: {
+    description: '';
+    displayName: 'resume';
+    pluralName: 'resumes';
+    singularName: 'resume';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adas: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.JSON;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::resume.resume'
+    > &
+      Schema.Attribute.Private;
+    number: Schema.Attribute.Integer;
+    pc: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    stock: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -942,6 +973,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
+      'api::resume.resume': ApiResumeResume;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
