@@ -428,41 +428,6 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiResumeResume extends Struct.SingleTypeSchema {
-  collectionName: 'resumes';
-  info: {
-    description: '';
-    displayName: 'resume';
-    pluralName: 'resumes';
-    singularName: 'resume';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    adas: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Email: Schema.Attribute.JSON;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::resume.resume'
-    > &
-      Schema.Attribute.Private;
-    number: Schema.Attribute.Integer;
-    pc: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    publishedAt: Schema.Attribute.DateTime;
-    stock: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -973,7 +938,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
-      'api::resume.resume': ApiResumeResume;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

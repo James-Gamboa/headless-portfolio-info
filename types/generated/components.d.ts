@@ -41,14 +41,12 @@ export interface ExperienceResume extends Struct.ComponentSchema {
 export interface ProjectProjects extends Struct.ComponentSchema {
   collectionName: 'components_project_projects';
   info: {
+    description: '';
     displayName: 'projects';
   };
   attributes: {
-    description: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
-    imageSrc: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    imageSrc: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
