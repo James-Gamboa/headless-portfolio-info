@@ -18,7 +18,7 @@ module.exports = ({ env }) => {
       useNullAsDefault: true,
     },
   };
-s
+
   return {
     connection: {
       client,
