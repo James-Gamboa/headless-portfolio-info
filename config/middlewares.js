@@ -19,21 +19,9 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: [
-        'http://localhost:3000',
-        'https://portfolio-james-headless-project-test.vercel.app',
-        'https://portfolio-james-headless-proje-git-233866-jamesgamboas-projects.vercel.app',
-        'https://portfolio-james-headless-project-test-llidkmdzn.vercel.app',
-      ],
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
-      headers: [
-        'Content-Type',
-        'Authorization',
-        'X-Frame-Options',
-        'Origin',
-        'Accept',
-      ],
-      keepHeaderOnError: true,
+      origin: ['http://localhost:3000', 'https://portfolio-james-headless-project-test.vercel.app'
+    ,''],
+    
     }
   },
   'strapi::poweredBy',
