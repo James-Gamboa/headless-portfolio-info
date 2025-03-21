@@ -1,6 +1,6 @@
 {
   "name": "back-end",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
@@ -12,7 +12,7 @@
   "dependencies": {
     "@strapi/plugin-cloud": "^5.10.3",
     "@strapi/plugin-users-permissions": "^5.10.3",
-    "@strapi/strapi": "^5.10.3",
+    "@strapi/strapi": "5.11.3",
     "better-sqlite3": "11.3.0",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
@@ -20,12 +20,15 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
-    "strapi": "^3.6.11",
     "styled-components": "^6.0.0"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
-    "npm": ">=6.0.0"
+    "node": "20.11.1",
+    "npm": "10.2.4"
+  },
+  "volta": {
+    "node": "20.11.1",
+    "npm": "10.2.4"
   },
   "strapi": {
     "uuid": "56740d89-8b1e-4ffe-870c-78a97c3b98bd"
