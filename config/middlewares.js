@@ -19,7 +19,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:3000', 'https://james-2345.vercel.app'],
+      origin: ['https://james-2345.vercel.app', 'http://localhost:3000'],
     },
   },
   'strapi::poweredBy',
