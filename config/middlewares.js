@@ -19,7 +19,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:3000', 'https://portfolio-james-git-headless-project-jamesgamboas-projects.vercel.app']
+      origin: ['http://localhost:3000', 'https://portfolio-james-478c6b82e-jamesgamboas-projects.vercel.app']
     }
   },
   'strapi::poweredBy',
